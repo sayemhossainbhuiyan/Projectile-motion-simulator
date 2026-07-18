@@ -1,63 +1,84 @@
 # Projectile-motion-simulator
 A python simulator that calculates and visualizes projectile motion - input lunch angle and speed to get max height , range, flight time, and a trajectory graph.
-# 🚀 Projectile Motion Simulator
+"""
+Projectile Motion Simulator
+----------------------------
+Takes a launch angle and speed, then calculates:
+    - Maximum height
+    - Distance traveled (range)
+    - Flight time
+and draws the trajectory graph.
 
-A simple Python program that simulates projectile motion based on user-input launch angle and speed. It calculates key physics values and visualizes the trajectory with a graph.
+Example question this answers:
+    "How far does a rocket go if launched at 60 degrees with X velocity?"
+"""
 
-## Features
+import math
+import matplotlib.pyplot as plt
 
-- Takes launch **angle** and **speed** as input
-- Calculates:
-  - **Maximum height**
-  - **Distance traveled** (range)
-  - **Flight time**
-- Draws and saves the **trajectory graph** (`trajectory.png`)
+g = 9.81  # acceleration due to gravity (m/s^2)
 
-## Example
 
-> "How far does a rocket go if launched at 60° with 20 m/s velocity?"
+def get_float(prompt):
+    """Keep asking until the user enters a valid number."""
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Please enter a valid number.")
 
-```
-Enter launch angle (degrees): 60
-Enter launch speed (m/s): 20
 
---- Results ---
-Maximum height:    15.29 m
-Distance traveled: 35.31 m
-Flight time:       3.53 s
-```
+def simulate_projectile(angle_deg, speed):
+    """Return (max_height, range_, flight_time, xs, ys) for the given launch."""
+    angle_rad = math.radians(angle_deg)
+    vx = speed * math.cos(angle_rad)
+    vy = speed * math.sin(angle_rad)
 
-## How It Works
+    flight_time = (2 * vy) / g
+    max_height = (vy ** 2) / (2 * g)
+    range_ = vx * flight_time
 
-The simulator uses standard projectile motion equations (assuming no air resistance):
+    # Build trajectory points for plotting
+    num_points = 200
+    xs, ys = [], []
+    for i in range(num_points + 1):
+        t = flight_time * i / num_points
+        x = vx * t
+        y = vy * t - 0.5 * g * t ** 2
+        xs.append(x)
+        ys.append(max(y, 0))  # don't let it dip below ground due to rounding
 
-- `vx = v * cos(θ)` — horizontal velocity component
-- `vy = v * sin(θ)` — vertical velocity component
-- `Flight time = 2 * vy / g`
-- `Max height = vy² / (2g)`
-- `Range = vx * flight time`
+    return max_height, range_, flight_time, xs, ys
 
-where `g = 9.81 m/s²` (acceleration due to gravity).
 
-## Requirements
+def plot_trajectory(xs, ys, angle_deg, speed):
+    plt.figure(figsize=(8, 5))
+    plt.plot(xs, ys, color="crimson", linewidth=2)
+    plt.title(f"Projectile Trajectory (angle={angle_deg}°, speed={speed} m/s)")
+    plt.xlabel("Horizontal Distance (m)")
+    plt.ylabel("Height (m)")
+    plt.grid(True, linestyle="--", alpha=0.6)
+    plt.fill_between(xs, ys, color="crimson", alpha=0.1)
+    plt.tight_layout()
+    plt.savefig("trajectory.png", dpi=150)
+    print("\nTrajectory graph saved as 'trajectory.png'")
+    plt.show()
 
-- Python 3
-- `matplotlib`
 
-Install dependencies:
+def main():
+    print("🚀 Projectile Motion Simulator\n")
+    angle = get_float("Enter launch angle (degrees): ")
+    speed = get_float("Enter launch speed (m/s): ")
 
-```bash
-pip install matplotlib
-```
+    max_height, range_, flight_time, xs, ys = simulate_projectile(angle, speed)
 
-## Usage
+    print("\n--- Results ---")
+    print(f"Maximum height:   {max_height:.2f} m")
+    print(f"Distance traveled: {range_:.2f} m")
+    print(f"Flight time:      {flight_time:.2f} s")
 
-```bash
-python3 projectile_motion_simulator.py
-```
+    plot_trajectory(xs, ys, angle, speed)
 
-Follow the prompts to enter a launch angle and speed. The program will print the results and display/save a trajectory graph.
 
-## License
-
-Feel free to use, modify, and share this project.
+if __name__ == "__main__":
+    main()
