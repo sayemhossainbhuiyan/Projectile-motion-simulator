@@ -59,27 +59,32 @@ Running the simulator produces:
 ## 🛠️ Requirements
 
 - Python 3.x
-- [matplotlib](https://matplotlib.org/)
-
-Install dependencies:
-
-```bash
-pip install matplotlib
-```
+- [matplotlib](https://matplotlib.org/) (listed in `requirements.txt`)
 
 *(`math` and `csv` are part of the Python standard library — no extra install needed.)*
 
 ---
 
-## ▶️ Usage
+## ▶️ How to Run
 
-Clone the repo and run the script:
+1. **Clone the repository**
 
-```bash
-git clone https://github.com/sayemhossainbhuiyan/Projectile-motion-simulator.git
-cd Projectile-motion-simulator
-python3 projectile_motion_simulator.py
-```
+   ```bash
+   git clone https://github.com/sayemhossainbhuiyan/Projectile-motion-simulator.git
+   cd Projectile-motion-simulator
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run**
+
+   ```bash
+   python3 projectile_motion_simulator.py
+   ```
 
 You'll be guided through a few prompts:
 
@@ -133,7 +138,9 @@ This produces the expected realistic behavior: shorter range, lower max height, 
 ```
 Projectile-motion-simulator/
 ├── projectile_motion_simulator.py   # main script
-└── README.md
+├── requirements.txt                  # dependencies
+├── README.md
+└── *.png                             # screenshot images
 ```
 
 ---
@@ -145,4 +152,3 @@ Contributions, issues, and feature requests are welcome. Feel free to open a pul
 ## 📜 License
 
 This project is open source and available for educational use. Add a license of your choice (e.g. MIT) if you plan to distribute it publicly.
-
