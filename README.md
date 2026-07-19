@@ -20,6 +20,30 @@ Built as a physics learning tool: enter a launch angle and speed, and watch the 
 
 ---
 
+## 🖼️ Screenshots
+
+**Animated trajectory** — launch point (green), max height (blue), landing (red), plus a live stats box:
+
+![Trajectory with markers](01_trajectory_with_markers.png)
+
+**Velocity vs Time** — initial and final velocity marked:
+
+![Velocity vs Time](02_velocity_vs_time.png)
+
+**Height vs Time** — max height and landing time marked:
+
+![Height vs Time](03_height_vs_time.png)
+
+**Compare two launches** — same graph, different angles:
+
+![Compare two launches](04_compare_two_launches.png)
+
+**Air resistance vs ideal motion** — shorter range, lower height, steeper descent with drag:
+
+![Air resistance vs ideal](05_air_resistance_vs_ideal.png)
+
+---
+
 ## 🖥️ Demo Output
 
 Running the simulator produces:
@@ -121,5 +145,4 @@ Contributions, issues, and feature requests are welcome. Feel free to open a pul
 ## 📜 License
 
 This project is open source and available for educational use. Add a license of your choice (e.g. MIT) if you plan to distribute it publicly.
-
 
