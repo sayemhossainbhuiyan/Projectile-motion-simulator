@@ -1,4 +1,4 @@
-# 🚀 Projectile Motion Simulator
+#  Projectile Motion Simulator
 
 An interactive, terminal-driven Python simulator that models the motion of a projectile — with real-time animated graphs, multi-planet gravity, air resistance, trajectory comparisons, and CSV data export.
 
@@ -6,17 +6,17 @@ Built as a physics learning tool: enter a launch angle and speed, and watch the 
 
 ---
 
-## ✨ Features
+##  Features
 
-- **🎞️ Animated trajectory** — watch the projectile move along its path in real time, not just a static plot
-- **📍 Key point markers** — launch (green), maximum height (blue), and landing (red) are all labeled directly on the graph
-- **📊 In-plot stats box** — angle, velocity, max height, range, and flight time displayed right on the chart
-- **⚖️ Compare two launches** — plot two trajectories (e.g. 30° vs 60°) on the same graph to compare side by side
-- **🌍 Multiple planets** — simulate launches on Earth, the Moon, or Mars, each with accurate gravity
-- **📈 Velocity vs Time graph** — see how speed changes throughout the flight, with initial/final velocity marked
-- **📈 Height vs Time graph** — see the height profile over time, with max height and landing time marked
-- **💨 Air resistance (drag) toggle** — switch between ideal (no drag) physics and a realistic, numerically-integrated drag model, then compare them on one graph
-- **📄 CSV export** — save every simulated time step (time, x, y, velocity) to `projectile_data.csv` for use in Excel, Google Sheets, or other tools
+- **Animated trajectory** — watch the projectile move along its path in real time, not just a static plot
+- ** Key point markers** — launch (green), maximum height (blue), and landing (red) are all labeled directly on the graph
+- ** In-plot stats box** — angle, velocity, max height, range, and flight time displayed right on the chart
+- ** Compare two launches** — plot two trajectories (e.g. 30° vs 60°) on the same graph to compare side by side
+- ** Multiple planets** — simulate launches on Earth, the Moon, or Mars, each with accurate gravity
+- ** Velocity vs Time graph** — see how speed changes throughout the flight, with initial/final velocity marked
+- ** Height vs Time graph** — see the height profile over time, with max height and landing time marked
+- ** Air resistance (drag) toggle** — switch between ideal (no drag) physics and a realistic, numerically-integrated drag model, then compare them on one graph
+- ** CSV export** — save every simulated time step (time, x, y, velocity) to `projectile_data.csv` for use in Excel, Google Sheets, or other tools
 
 ---
 
@@ -65,7 +65,7 @@ Running the simulator produces:
 
 ---
 
-## ▶️ How to Run
+##  How to Run
 
 1. **Clone the repository**
 
@@ -111,7 +111,7 @@ Depending on your choices, the simulator will show an animated trajectory, a vel
 
 ---
 
-## 🧮 The Physics
+##  The Physics
 
 **Ideal motion (no air resistance)** uses standard kinematics (SUVAT) equations:
 
@@ -133,7 +133,7 @@ This produces the expected realistic behavior: shorter range, lower max height, 
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 Projectile-motion-simulator/
@@ -145,7 +145,7 @@ Projectile-motion-simulator/
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions, issues, and feature requests are welcome. Feel free to open a pull request or file an issue.
 
